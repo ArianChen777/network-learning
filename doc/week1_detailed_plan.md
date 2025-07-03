@@ -232,10 +232,10 @@ go install golang.org/x/tools/cmd/pprof@latest
 
 ### 技能掌握检查表
 **基础技能 (必须掌握):**
-- [ ] 能独立编写TCP/UDP服务器和客户端
-- [ ] 熟练使用Wireshark分析数据包
+- [x] 能独立编写TCP/UDP服务器和客户端 (TCP部分已完成)
+- [x] 熟练使用Wireshark分析数据包 (TCP抓包分析已完成)
 - [ ] 掌握tcpdump基本命令
-- [ ] 理解TCP三次握手、四次挥手过程
+- [x] 理解TCP三次握手、四次挥手过程
 - [ ] 会使用netstat/ss查看网络状态
 
 **进阶技能 (建议掌握):**
