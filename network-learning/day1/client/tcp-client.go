@@ -47,17 +47,17 @@ func main() {
 		// 如果输入quit就开始优雅关闭
 		if strings.ToLower(message) == "quit" {
 			fmt.Println("正在关闭连接...")
-			
+
 			// 等待一小段时间确保服务器收到quit消息并回复
-			time.Sleep(100 * time.Millisecond)
-			
+			time.Sleep(50 * time.Millisecond)
+
 			// 半关闭连接：关闭写端，但保持读端开放
-			// 这样服务器可以发送剩余数据，客户端可以继续接收
+			// 这样客户端先发送FIN，服务器可以发送剩余数据后再关闭
 			if tcpConn, ok := conn.(*net.TCPConn); ok {
 				tcpConn.CloseWrite()
-				fmt.Println("已关闭写端，等待服务器关闭连接...")
+				fmt.Println("已关闭写端（发送FIN），等待服务器关闭连接...")
 			}
-			
+
 			break
 		}
 	}

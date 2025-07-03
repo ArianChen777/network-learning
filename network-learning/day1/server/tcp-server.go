@@ -46,10 +46,13 @@ func handleConnection(conn net.Conn) {
 		response := fmt.Sprintf("服务器回复: %s\n", strings.ToUpper(message))
 		conn.Write([]byte(response))
 
-		// 如果收到"quit"就断开连接
+		// 如果收到"quit"，发送回复但不立即断开，等待客户端关闭连接
 		if strings.ToLower(message) == "quit" {
-			fmt.Printf("客户端 %s 断开连接\n", conn.RemoteAddr())
-			break
+			fmt.Printf("收到quit消息，等待客户端关闭连接: %s\n", conn.RemoteAddr())
+			// 不break，让连接继续，直到客户端关闭连接时scanner.Scan()返回false
 		}
 	}
+	
+	// 当scanner.Scan()返回false时（客户端关闭连接），程序到达这里
+	fmt.Printf("客户端连接已关闭: %s\n", conn.RemoteAddr())
 }
