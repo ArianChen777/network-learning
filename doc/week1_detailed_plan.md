@@ -52,7 +52,7 @@ cd ~/network-learning/day1
 #### 上午 (2-3小时)
 **任务1: UDP实现**
 - 实现UDP echo服务器和客户端
-- 对比TCP和UDP的编程差异
+- 对比TCP和UDP的编程差异  
 - 观察UDP数据包结构
 
 **任务2: TCP连接关闭分析**
@@ -232,10 +232,10 @@ go install golang.org/x/tools/cmd/pprof@latest
 
 ### 技能掌握检查表
 **基础技能 (必须掌握):**
-- [x] 能独立编写TCP/UDP服务器和客户端 (TCP部分已完成)
-- [x] 熟练使用Wireshark分析数据包 (TCP抓包分析已完成)
+- [ ] 能独立编写TCP/UDP服务器和客户端
+- [ ] 熟练使用Wireshark分析数据包
 - [ ] 掌握tcpdump基本命令
-- [x] 理解TCP三次握手、四次挥手过程
+- [ ] 理解TCP三次握手、四次挥手过程
 - [ ] 会使用netstat/ss查看网络状态
 
 **进阶技能 (建议掌握):**
